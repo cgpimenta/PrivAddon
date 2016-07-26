@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>PrivAddon</h1><p>The add-on is loaded on every web page, but the processing only occurs in Google pages. The <a href="./manifest.json.html">manifest file</a> can declare match patterns to load the content scripts only into specific URLs. However, match patterns cannot have wild cards replacing the domain, so it would be necessary to specify all possible country domains.</p>
+<p>Training occurs the first time a Google page is visited. Subsequent training sessions occur every time the user clicks on the button that says that an advert had been misclassified. The advert is then added to the training data with the correct label.</p>
+<p>Right now, the add-on only shows the user if the adverts are sensitive or not. The actual learning identification still has to be implemented. See the comment in <a href="./learning.js.html#line20">learning.js</a> and the first item in the TODO list below explaining the problem.</p>
+<hr>
+<h2>TODO list</h2><ul>
+<li>Implement the <a href="./learning.js.html">learning</a> identification part. I have to send a probe query, but I don't know how to get the adverts. The HTTP request's response only contains the static portions of the results page; the rest is only javascript. I needed something like a hidden window or tab, so I could use the Document interface to access the adverts (this is what I'm doing in the rest of the processing);<ul>
+<li>From time to time, the add-on would send the probe query, verify if Google returns sensitive ads and warn the user.</li>
+</ul>
+</li>
+<li>Modify the training data: it has to contain sensitive and nonsensitive topics;</li>
+<li>Modify the function <a href="./global.html#getAdLabel">getAdLabel</a> to correctly identify the label according to the advert topic;</li>
+<li>Remove all debugging code (starting with <code>/**/</code>);</li>
+<li>Remove code to reset training (training_data.js);</li>
+<li>Change name and description of the add-on (<a href="./manifest.json.html">manifest.json</a>);</li>
+<li>Listen for other user events (<a href="./index.js.html">index.js</a>);</li>
+<li>Maybe retrain only after some number of adverts are identified as misclassified;</li>
+<li>Add copyright notice for the function <a href="./ad_processing.js.html#line225">stemmer</a>;</li>
+<li>Add browser or page actions (to do what?);</li>
+<li>Change the icon?</li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addTrainingData">addTrainingData</a></li><li><a href="global.html#buildDictionary">buildDictionary</a></li><li><a href="global.html#changeLabel">changeLabel</a></li><li><a href="global.html#checkTraining">checkTraining</a></li><li><a href="global.html#createCountMatrix">createCountMatrix</a></li><li><a href="global.html#createEmptyMatrix">createEmptyMatrix</a></li><li><a href="global.html#deserializeMatrix">deserializeMatrix</a></li><li><a href="global.html#deserializeStrArray">deserializeStrArray</a></li><li><a href="global.html#extractAds">extractAds</a></li><li><a href="global.html#getAdLabel">getAdLabel</a></li><li><a href="global.html#getAdText">getAdText</a></li><li><a href="global.html#getColSums">getColSums</a></li><li><a href="global.html#getKeywords">getKeywords</a></li><li><a href="global.html#getPRI">getPRI</a></li><li><a href="global.html#getProbs">getProbs</a></li><li><a href="global.html#getRowSums">getRowSums</a></li><li><a href="global.html#getUniqueWords">getUniqueWords</a></li><li><a href="global.html#getWordFreq">getWordFreq</a></li><li><a href="global.html#highlightAds">highlightAds</a></li><li><a href="global.html#initMatrix">initMatrix</a></li><li><a href="global.html#isStopWord">isStopWord</a></li><li><a href="global.html#loadTraining">loadTraining</a></li><li><a href="global.html#main">main</a></li><li><a href="global.html#processAds">processAds</a></li><li><a href="global.html#removeStopWords">removeStopWords</a></li><li><a href="global.html#serializeArray">serializeArray</a></li><li><a href="global.html#serializeMatrix">serializeMatrix</a></li><li><a href="global.html#splitTrainingData">splitTrainingData</a></li><li><a href="global.html#stemWords">stemWords</a></li><li><a href="global.html#testAd">testAd</a></li><li><a href="global.html#tokeniseText">tokeniseText</a></li><li><a href="global.html#training">training</a></li><li><a href="global.html#updateCountMatrix">updateCountMatrix</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Jul 26 2016 10:26:38 GMT+0100 (IST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
