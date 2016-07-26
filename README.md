@@ -24,3 +24,8 @@ Right now, the add-on only shows the user if the adverts are sensitive or not. T
 * Add copyright notice for the function ***stemmer***;
 * Add browser or page actions (to do what?);
 * Change the icon?
+
+---
+
+##### GitHub Page
+<https://guimarac.github.io/PrivAddon/>
