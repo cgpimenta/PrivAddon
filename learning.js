@@ -21,24 +21,3 @@ function identifyLearning() {
         var ads2 = document.getElementsByClassName("ads-ad");
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
